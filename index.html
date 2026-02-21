@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DetrexMC | Minecraft Network</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  min-height:100vh;
+  color:#2b1a00;
+  background:linear-gradient(120deg,#ffb703,#ff8800,#ffb703);
+  background-size:400% 400%;
+  animation:bgMove 14s ease infinite;
+}
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 22px;
+  background:rgba(255,255,255,.9);
+  box-shadow:0 4px 15px rgba(0,0,0,.2);
+  position:sticky;top:0;z-index:1000;
+}
+.nav-left a{
+  text-decoration:none;
+  font-weight:900;
+  color:#7a3e00;
+  margin-right:14px;
+}
+.nav-left a:hover{color:#ff6a00}
+.btn{
+  background:#ff9f1c;
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:0 0 12px rgba(255,140,0,.7);
+}
+.btn:hover{background:#ff6a00;color:white}
+
+/* SECTIONS */
+.section{
+  max-width:1100px;
+  margin:60px auto;
+  padding:30px;
+  background:rgba(255,255,255,.92);
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+.section h1{
+  font-size:40px;
+  margin-bottom:10px;
+  color:#7a3e00;
+}
+.section p{opacity:.9}
+
+/* OURSELFES */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+  margin-top:25px;
+}
+.card{
+  background:#fff3e0;
+  padding:20px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px)}
+.card img{
+  width:110px;height:110px;border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 0 18px #ff9f1c;
+  margin-bottom:10px;
+}
+.card h3{color:#7a3e00}
+.role{font-weight:800;color:#ff6a00}
+
+/* DISCORD SECTION */
+.discord-box{
+  margin-top:25px;
+  padding:30px;
+  background:linear-gradient(135deg,#5865F2,#404EED);
+  border-radius:18px;
+  color:white;
+  text-align:center;
+  box-shadow:0 0 30px rgba(88,101,242,.8);
+}
+.discord-logo{
+  width:80px;height:80px;
+  border-radius:20px;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+  font-weight:900;
+  color:#5865F2;
+  margin:0 auto 15px;
+  box-shadow:0 0 20px rgba(255,255,255,.8);
+}
+.discord-box h2{margin-bottom:8px}
+.discord-box p{opacity:.95}
+.discord-btn{
+  margin-top:18px;
+  display:inline-block;
+  padding:12px 22px;
+  background:white;
+  color:#5865F2;
+  font-weight:900;
+  border-radius:12px;
+  text-decoration:none;
+  transition:.3s;
+}
+.discord-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(255,255,255,.9);
+}
+
+/* POPUPS */
+.popup{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+}
+.popup-box{
+  background:white;
+  padding:25px;
+  width:320px;
+  border-radius:16px;
+}
+.popup-box h2{color:#7a3e00;margin-bottom:12px}
+.popup-box input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+.close{
+  margin-top:10px;
+  background:#ccc;
+  border:none;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  font-weight:800;
+  color:#5a2c00;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div class="nav-left">
+    <a href="#home">DetrexMC</a>
+    <a href="#ourselfes">OurSelfes</a>
+  </div>
+  <div>
+    <button class="btn" onclick="openPop('login')">Login</button>
+    <button class="btn" onclick="openPop('register')">Register</button>
+  </div>
+</div>
+
+<div class="section" id="home">
+  <h1>Welcome to DetrexMC</h1>
+  <p>A powerful Minecraft network built for smooth gameplay, performance, and community fun.</p>
+</div>
+
+<div class="section" id="ourselfes">
+  <h1>OurSelfes</h1>
+
+  <div class="cards">
+    <div class="card">
+      <img src="https://i1.sndcdn.com/avatars-OuZBPfvRZURFT9sy-C3Hz3g-t1080x1080.jpg">
+      <h3>Aayush</h3>
+      <div class="role">Owner</div>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn.discordapp.com/attachments/1472523932958458031/1474800024666767592/IMG_20260128_174427.jpg?ex=699b2a0e&is=6999d88e&hm=ed37588c417193f9a4ab80ac131909def79c11ba1e5c664d6b39ff1a5166732c&">
+      <h3>Swight_</h3>
+      <div class="role">Developer</div>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn.discordapp.com/attachments/1474796323348938923/1474801031270371349/ChatGPT_Image_Feb_20_2026_10_37_56_PM.png?ex=699b2afe&is=6999d97e&hm=e8182177a28401589f9fceea06fb0bf61e717cf9b2f0b79fd882ad91fd8ae0e3&">
+      <h3>FrDreamoHeh</h3>
+      <div class="role">Developer</div>
+    </div>
+  </div>
+
+  <!-- DISCORD -->
+  <div class="discord-box">
+    <div class="discord-logo">DC</div>
+    <h2>Join Our Discord Server</h2>
+    <p>Get updates, support, events and community chat</p>
+    <a class="discord-btn" href="https://discord.gg/JC9MAQMq6J" target="_blank">
+      Join DetrexMC Discord
+    </a>
+  </div>
+</div>
+
+<footer>
+  © 2025 DetrexMC • All Rights Reserved
+</footer>
+
+<!-- LOGIN -->
+<div class="popup" id="login">
+  <div class="popup-box">
+    <h2>Login</h2>
+    <input placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button class="btn">Login</button>
+    <button class="close" onclick="closePop('login')">Close</button>
+  </div>
+</div>
+
+<!-- REGISTER -->
+<div class="popup" id="register">
+  <div class="popup-box">
+    <h2>Register</h2>
+    <input placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button class="btn">Register</button>
+    <button class="close" onclick="closePop('register')">Close</button>
+  </div>
+</div>
+
+<script>
+function openPop(id){document.getElementById(id).style.display="flex"}
+function closePop(id){document.getElementById(id).style.display="none"}
+</script>
+
+</body>
+</html>
